@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <jsp:include page="header.jsp"></jsp:include>
+ <jsp:include page="../../header.jsp"></jsp:include>
  <script>
  	$(document).ready(function() {
 	 	new DataTable('#example', {

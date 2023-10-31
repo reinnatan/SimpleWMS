@@ -51,7 +51,7 @@ public class WarehouseServlet extends HttpServlet {
 				break;
 		}
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("listWarehouse.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/views/warehouse/listWarehouse.jsp");
 		dispatcher.forward(req, resp);
 		
 	}
@@ -63,7 +63,7 @@ public class WarehouseServlet extends HttpServlet {
 		RequestDispatcher dispatcher;
 		switch (action) {
 		case "/add-warehouse": 
-			dispatcher = req.getRequestDispatcher("addWarehouse.jsp");
+			dispatcher = req.getRequestDispatcher("/views/warehouse/addWarehouse.jsp");
 			dispatcher.forward(req, resp);
 			break;
 		case "/list-warehouse-data":
@@ -81,21 +81,21 @@ public class WarehouseServlet extends HttpServlet {
 			String id = req.getParameter("id");
 			List<Object[]> listWarehouseEdit = dao.getSelectedWarehouse(id);
 			req.setAttribute("listWarehouse", listWarehouseEdit.get(0));
-			dispatcher = req.getRequestDispatcher("editWarehouse.jsp");
+			dispatcher = req.getRequestDispatcher("/views/warehouse/editWarehouse.jsp");
 			dispatcher.forward(req, resp);
 			break;
 		case "/list-warehouse":
-			dispatcher = req.getRequestDispatcher("listWarehouse.jsp");
+			dispatcher = req.getRequestDispatcher("/views/warehouse/listWarehouse.jsp");
 			dispatcher.forward(req, resp);
 			break;
 		case "/delete":
 			id = req.getParameter("id");
 			dao.deleteWarehouse(id);
-			dispatcher = req.getRequestDispatcher("listWarehouse.jsp");
+			dispatcher = req.getRequestDispatcher("/views/warehouse/listWarehouse.jsp");
 			dispatcher.forward(req, resp);
 			break;
 		default:
-			dispatcher = req.getRequestDispatcher("listWarehouse.jsp");
+			dispatcher = req.getRequestDispatcher("/views/warehouse/listWarehouse.jsp");
 			dispatcher.forward(req, resp);
 			break;
 		}
