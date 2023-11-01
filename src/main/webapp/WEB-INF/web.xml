@@ -35,6 +35,18 @@ version="6.0">
   	<servlet-name>racks</servlet-name>
   	<url-pattern>/racks/*</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>items</servlet-name>
+  	<servlet-class>com.simple.warehouse.controller.ItemServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>items</servlet-name>
+  	<url-pattern>/items/*</url-pattern>
+  </servlet-mapping>
+  
 
   
 </web-app>
