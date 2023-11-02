@@ -32,7 +32,6 @@ public class WarehouseServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String method = req.getParameter("method");
-		int a = 100;
 		switch(method) {
 			case "add":
 				PrintWriter out = resp.getWriter();

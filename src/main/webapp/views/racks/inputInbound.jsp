@@ -56,7 +56,7 @@
 		
 		//function for called list item
 		$("#showItemId").click(function(){
-			fetch('/SimpleWarehousManagementSystem/item/list-racks-data')
+			fetch('/SimpleWarehousManagementSystem/items')
 		      .then(response => {
 		        if (!response.ok) {
 		        	Swal.showValidationMessage(
@@ -65,8 +65,10 @@
 		        }
 		        return response.json();
 		      }).then((data) => {
+		    	 
 		    	let rows = "";
 		      	data.data.map(rack => {
+		      		 console.log(rack);
 		      		let data = "<tr><td><input type='radio' id="+rack[0]+" name='idRack'/></td><td>"+rack[1]+"</td><td>"+rack[2]+"</td><td>"+rack[3]+"</td><td>"+rack[4]+"</td></tr>";
 		      		rows = rows+data;
 		      	})
@@ -104,7 +106,7 @@
 		$("#addItem").click(function(){
 			
 			let finalHtml = 
-				"<form method='post' id='formAddItem' action='/SimpleWarehousManagementSystem/item'>"+
+				"<form method='post' id='formAddItem' action='/SimpleWarehousManagementSystem/items'>"+
 					"<table>"+
 						"<tr><td>Name</td><td><input type='text' name='nameItem'></td></tr>"+
 						"<tr><td>Date Production</td><td><input type='date' name='dateProduction'></td></tr>"+
@@ -127,16 +129,18 @@
 					if(result.value){
 						let nameItem = $('input[name="nameItem"]').val();
 						let dateProd = $('input[name="dateProduction"]').val();
-						const formData = new FormData()
-				        formData.append('rackName', nameItem)
-				        formData.append('dateProduction', dateProd)
+						var formData = 'rackName='+nameItem+'&dateProduction='+dateProd;
+						//const formData = new FormData();
+				        //formData.append('rackName', nameItem);
+				        //formData.append('dateProduction', dateProd);
 				        // AJAX
 				        $.ajax({
 				          url: '/SimpleWarehousManagementSystem/items',
 				          data: formData,
 				          type: 'POST',
+				          dataType: 'json',
 				          processData: false,
-				          contentType: false,
+				          contentType: 'application/x-www-form-urlencoded',
 				          success: function (data) {
 				            root.innerHTML = 'FormData Object Send Successfully!'
 				          },

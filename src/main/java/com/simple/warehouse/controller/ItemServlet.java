@@ -28,7 +28,7 @@ public class ItemServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
 		String nameRack = req.getParameter("rackName");	
 		String dateProduction = req.getParameter("dateProduction");
 		
@@ -47,9 +47,9 @@ public class ItemServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Object[]> listRack = itemDao.listItem();
+		List<Object[]> listItem = itemDao.listItem();
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("data", listRack);
+		jsonObject.put("data", listItem);
 		
 		PrintWriter out = resp.getWriter();
         resp.setContentType("application/json");
