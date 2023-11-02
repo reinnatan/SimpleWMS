@@ -11,9 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-
 import org.json.JSONObject;
-
 import com.simple.warehouse.dao.RackDao;
 import com.simple.warehouse.dao.WarehouseDao;
 import com.simple.warehouse.enitty.Rack;

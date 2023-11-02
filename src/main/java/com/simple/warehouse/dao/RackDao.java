@@ -36,11 +36,11 @@ public class RackDao {
 		}
 	}
 	
-	
+
 	public List<Object[]> listRack(){
 		Transaction transaction = null;
 		try(Session session = HibernateUtils.getSessionFactory().openSession()){
-			return (List<Object[]>) session.createQuery("select r.id, r.name, r.count, r.dateInbound, r.dateOutbound from Rack r", Object[].class).list();
+			return (List<Object[]>) session.createQuery("from Rack r", Object[].class).list();
 		}catch(Exception e) {
 			if(transaction!=null) {
 				transaction.rollback();
@@ -50,17 +50,5 @@ public class RackDao {
 		}
 	}
 	
-	public List<Object[]> inputInbound(){
-		Transaction transaction = null;
-		try(Session session = HibernateUtils.getSessionFactory().openSession()){
-			return (List<Object[]>) session.createQuery("select r.id, r.name, r.count, r.dateInbound, r.dateOutbound from Rack r", Object[].class).list();
-		}catch(Exception e) {
-			if(transaction!=null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-			return null;
-		}
-	}
 
 }
