@@ -58,7 +58,7 @@
 </head>
 <body>	
 	<form method="post" action="/SimpleWarehousManagementSystem/racks">
-		<input type="hidden" name="method" value="add" />
+		<input type="hidden" name="action" value="add" />
 		<table>
 			<tr><td>Gudang</td><td><input type = "text" id="warehouseId" name="warehouseId" readonly="readonly"/></td><td><input type="button" id="showGudangId" value="..."/></td></tr>
 			<tr><td>Name</td><td><input type = "text" name="rackName"/></td></tr>

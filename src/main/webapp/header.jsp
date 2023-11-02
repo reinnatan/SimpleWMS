@@ -5,16 +5,21 @@
 <head>
 <meta charset="UTF-8">
   <!-- boostrap libs-->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!--  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>	
   
   <!-- datatable libs -->
+  <!-- 
   <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  -->
+  <script src = "https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
   <!-- sweet alert libs -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -46,8 +51,17 @@
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/racks/add-racks">Add Racks</a></li>
             <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/racks/list-racks">List Racks</a></li>
-            <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/racks/input-inbound">Input Inbound</a></li>
-            <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/racks/input-outbound">Input Outbound</a></li>
+            
+          </ul>
+        </li>
+          
+        <!-- item Inbound/Outbound -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Inbound/Outbound
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          	<li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/inbound-outbound/list-inbound-outbound">List Inbound-Outbound</a></li>
           </ul>
         </li>
         

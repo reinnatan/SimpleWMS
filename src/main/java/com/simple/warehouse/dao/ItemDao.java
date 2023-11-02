@@ -65,5 +65,15 @@ public class ItemDao {
 			return null;
 		}
 	}
+	
+	public Item findItem(String itemId) {
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			Item item = session.find(Item.class, itemId);
+			return item;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 }

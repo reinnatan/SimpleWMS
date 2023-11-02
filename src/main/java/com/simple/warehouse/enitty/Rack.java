@@ -3,8 +3,10 @@ package com.simple.warehouse.enitty;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,7 +27,7 @@ public class Rack{
 	@Column
 	private String name;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Item> item;
 	
 	@Column

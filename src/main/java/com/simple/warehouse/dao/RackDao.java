@@ -50,5 +50,31 @@ public class RackDao {
 		}
 	}
 	
+	public Rack findRack(String rackId) {
+		Transaction transaction = null;
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			return session.find(Rack.class, rackId);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public void putItemToRack(String count,Rack rack, String itemId) {
+		Transaction transaction = null;
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			int countParse = Integer.parseInt(count);
+			rack.setCount(countParse);
+			session.getTransaction().begin();
+			session.merge(rack);
+			session.getTransaction().commit();
+		}catch(Exception e) {
+			if(transaction!=null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+	}
+	
 
 }
