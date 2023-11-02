@@ -65,15 +65,15 @@
 		        }
 		        return response.json();
 		      }).then((data) => {
-		    	 
 		    	let rows = "";
+		    	console.log(data);
 		      	data.data.map(rack => {
-		      		 console.log(rack);
-		      		let data = "<tr><td><input type='radio' id="+rack[0]+" name='idRack'/></td><td>"+rack[1]+"</td><td>"+rack[2]+"</td><td>"+rack[3]+"</td><td>"+rack[4]+"</td></tr>";
+		      	
+		      		let data = "<tr><td><input type='radio' id="+rack[0].id+" name='idRack'/></td><td>"+rack[0].name+"</td><td>"+rack[0].dateProduction+"</td></tr>";
 		      		rows = rows+data;
 		      	})
 		      	
-		      	let finalHtml = "<table><th></th><th>Name</th><th>Count</th><th>Date Inbound</th><th>Date Outbound</th>"
+		      	let finalHtml = "<table><th></th><th>Name</th><th>Date Production</th>"
 		      	+rows+"</table>";
 		      	Swal.fire({
 					  title: '<strong>List Racks</strong>',
@@ -130,10 +130,6 @@
 						let nameItem = $('input[name="nameItem"]').val();
 						let dateProd = $('input[name="dateProduction"]').val();
 						var formData = 'rackName='+nameItem+'&dateProduction='+dateProd;
-						//const formData = new FormData();
-				        //formData.append('rackName', nameItem);
-				        //formData.append('dateProduction', dateProd);
-				        // AJAX
 				        $.ajax({
 				          url: '/SimpleWarehousManagementSystem/items',
 				          data: formData,
@@ -142,10 +138,10 @@
 				          processData: false,
 				          contentType: 'application/x-www-form-urlencoded',
 				          success: function (data) {
-				            root.innerHTML = 'FormData Object Send Successfully!'
+				        	  Swal.showValidationMessage('FormData Object Send Successfully!');
 				          },
 				          error: function (err) {
-				            root.innerHTML = 'FormData Object Send Failed!'
+				        	  Swal.showValidationMessage('FormData Object Send Failed!');
 				          },
 				        })
 						
