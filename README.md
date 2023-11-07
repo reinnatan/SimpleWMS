@@ -1,1 +1,14 @@
 # SimpleWMS
+  - Simple Warehouse management system with features:
+    - warehouse management
+    - item management
+    - inbound and outbound item
+    - rack storage item management
+  - Tech stack
+    - Servlet
+    - Java
+    - Mysql
+    - JBBC
+    - JQuery
+    - Datatable javascript
+    - Sweet alert
