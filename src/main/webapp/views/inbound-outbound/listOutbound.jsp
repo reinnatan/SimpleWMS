@@ -25,7 +25,7 @@ function format ( d ) {
         '</tr>'+
         '<tr>'+
             '<td>Extra info:</td>'+
-            '<td>And any further details here (images etc)...</td>'+
+            '<td><a href=/SimpleWarehousManagementSystem/racks/edit?id="'+(d[5]['id'])+"'><span class='edit'><i class='fa fa-plus'></i></span></a></td>'"+
         '</tr>'+
     '</table>';
 	}
@@ -59,10 +59,16 @@ function format ( d ) {
 		    	{data:2},
 		    	{data:3},
 		    	{data:4},
+		    	{
+		    		data:0,
+		    		render: function ( data, type, row, meta ) {
+			                return "<a href=/SimpleWarehousManagementSystem/racks/edit?id="+(data)+"><span class='edit'><i class='fa fa-plus'></i></span></a>";
+			        }    
+		    	},
 		    	
 		    	{
 		            className: 'dt-control',
-		            orderable: false,
+		            orderable: true,
 		            data: null,
 		            defaultContent: ''
 		        }
@@ -89,6 +95,7 @@ function format ( d ) {
                 <th>Count</th>
                 <th>Date Inbound</th>
                 <th>Date Outbound</th>
+                 <th>Action</th>
                 <th></th>
             </tr>
         </thead>
