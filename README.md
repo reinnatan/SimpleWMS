@@ -6,9 +6,11 @@
     - rack storage item management
   - Tech stack
     - Servlet
+    - JSP
     - Java
     - Mysql
-    - JBBC
+    - JDBC
     - JQuery
     - Datatable javascript
     - Sweet alert
+    - Hibernate
