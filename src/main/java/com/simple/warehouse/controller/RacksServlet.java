@@ -46,21 +46,22 @@ public class RacksServlet extends HttpServlet {
 			Rack rack = rackDao.findRack(rackId);
 			rack.setDateInbound(Calendar.getInstance().getTime());
 			Item item = itemDao.findItem(itemId);
-			if (rack.getItem() == null) {
+			item.setRack(rack);
+			if (rack.getItem()==null) {
 				ArrayList<Item> listItems = new ArrayList<Item>();
 				listItems.add(item);
 				rack.setItem(listItems);
-				rackDao.putItemToRack(countItem, rack, itemId);
+				rackDao.putItemToRack(rack, item, countItem, itemId);
 				// forward to view
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/racks/listRacks.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/inbound-outbound/listOutbound.jsp");
 				dispatcher.forward(req, resp);
 
 			} else {
 				List<Item> listItems = rack.getItem();
 				listItems.add(item);
-				rackDao.putItemToRack(countItem, rack, itemId);
+				rackDao.putItemToRack(rack, item, countItem,  itemId);
 				// forward to view
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/racks/listRacks.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/inbound-outbound/listOutbound.jsp");
 				dispatcher.forward(req, resp);
 			}
 			break;
@@ -74,13 +75,13 @@ public class RacksServlet extends HttpServlet {
 			if (rack.getItem() == null) {
 				ArrayList<Item> listItems = new ArrayList<Item>();
 				listItems.add(item);
-				rackDao.putItemToRack(countItem, rack, itemId);
+				rackDao.putItemToRack(rack, item, countItem, itemId);
 				// forward to view
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/racks/listRacks.jsp");
 				dispatcher.forward(req, resp);
 			} else {
 				List<Item> listItems = rack.getItem();
-				rackDao.putItemToRack(countItem, rack, itemId);
+				rackDao.putItemToRack(rack, item, countItem, itemId);
 				// forward to view
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/racks/listRacks.jsp");
 				dispatcher.forward(req, resp);

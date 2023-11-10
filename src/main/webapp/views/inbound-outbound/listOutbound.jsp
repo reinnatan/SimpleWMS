@@ -9,25 +9,26 @@
 <script>
 function format ( d ) {
 	console.log(d);
-	console.log(d[5]['id']);
-	console.log(d[5]['name']);
-	console.log(d[5]['dateProduction']);
+	//processing items in rack
+	var data = "";
+	for(i=0; i<d['item'].length; i++){
+		var dateProd = new Date(d['item'][i]['dateProduction']);
+		
+		const formatted = dateProd.getFullYear()+"-"+dateProd.getMonth()+"-"+dateProd.getDate();
+		
+		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td></tr>');
+	}
+	
+	var finalize = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+	   	'<th>ID Item</th><th>Name Item</th><th>Date Production</th>'+
+	   	data
+	   	+'</table>';
+	   	
+	console.log("data"+data);   	
+	console.log("finalize"+finalize);
 	
     // `d` is the original data object for the row
-    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-        '<tr>'+
-            '<td>ID Item:</td>'+
-            '<td>'+d[5]['id']+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Name Item:</td>'+
-            '<td>'+d[5]['name']+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Extra info:</td>'+
-            '<td><a href=/SimpleWarehousManagementSystem/racks/edit?id="'+(d[5]['id'])+"'><span class='edit'><i class='fa fa-plus'></i></span></a></td>'"+
-        '</tr>'+
-    '</table>';
+    return finalize;
 	}
 
  	$(document).ready(function() {
@@ -53,16 +54,18 @@ function format ( d ) {
  		
 	 	var table = new DataTable('#example', {
 		    ajax: '/SimpleWarehousManagementSystem/inbound-outbound/list-inbound-outbound-data/',
+		   
 		    columns:[
-		    	{data:0},
-		    	{data:1},
-		    	{data:2},
-		    	{data:3},
-		    	{data:4},
+		    	{data:'id'},
+		    	{data:'name'},
+		    	{data:'count'},
+		    	{data:'dateInbound'},
+		    	{data:'dateOutbound'},
+		    	
 		    	{
-		    		data:0,
+		    		data:'id',
 		    		render: function ( data, type, row, meta ) {
-			                return "<a href=/SimpleWarehousManagementSystem/racks/edit?id="+(data)+"><span class='edit'><i class='fa fa-plus'></i></span></a>";
+			                return "<a href=/SimpleWarehousManagementSystem/racks/input-inbound?id="+(data)+"><span class='edit'><i class='fa fa-plus'></i></span></a>";
 			        }    
 		    	},
 		    	

@@ -159,12 +159,13 @@
 </script>
 </head>
 <body>
+	
 	<h5> Input Inbound</h5>
 	<form method="post" action="/SimpleWarehousManagementSystem/racks">
 		<input type="hidden" name="action" value="inbound" />
 		<table>
 			<tr><td><input type='hidden' name='action' value='inbound'></td></tr>
-			<tr><td>Rack ID</td><td><input type = "text" id="rackId" name="rackId" readonly="readonly"/></td><td><input type="button" id="showRackId" value="..."/></td></tr>
+			<tr><td>Rack ID</td><td><input type = "text" id="rackId" name="rackId" readonly="readonly" value="<%= request.getParameter("id") %>"/></td><td><input type="button" id="showRackId" value="..."/></td></tr>
 			<tr><td>Item ID</td><td><input type = "text" id="itemId" name="itemId" readonly="readonly"/></td><td><input type="button" id="showItemId" value="..."/><input type="button" id="addItem" value="+"/></td></tr>
 			<tr><td>Count</td><td><input type = "text" id="count" name="count"/></td></tr>
 			<tr><td><input type="submit" value="save"></td><td></td></tr>
