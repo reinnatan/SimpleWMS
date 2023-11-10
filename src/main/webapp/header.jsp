@@ -46,12 +46,23 @@
         <!-- item Racks -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Racks
+            Rack
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/racks/add-racks">Add Racks</a></li>
             <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/racks/list-racks">List Racks</a></li>
             
+          </ul>
+        </li>
+        
+        <!-- item menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Item
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/items/list-item">List Item</a></li>
+            <li><a class="dropdown-item" href="/SimpleWarehousManagementSystem/items/add-item">Add Item</a></li>
           </ul>
         </li>
           

@@ -1,6 +1,7 @@
 package com.simple.warehouse.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -56,7 +57,7 @@ public class ItemDao {
 	public List<Object[]> listItem(){
 		Transaction transaction = null;
 		try(Session session = HibernateUtils.getSessionFactory().openSession()){
-			return (List<Object[]>) session.createQuery("from Item i", Object[].class).list();
+			return (List<Object[]>) session.createQuery("select i.id, i.name, i.dateProduction from Item i", Object[].class).list();
 		}catch(Exception e) {
 			if(transaction!=null) {
 				transaction.rollback();
@@ -73,6 +74,37 @@ public class ItemDao {
 		}catch (Exception e) {
 			e.printStackTrace();
 			return null;
+		}
+	}
+	
+	public void updateItem(Item selectedItem, String name, Date dateProduction) {
+		Transaction transaction = null;
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			selectedItem.setName(name);
+			selectedItem.setDateProduction(dateProduction);
+			session.merge(selectedItem);
+			transaction.commit();
+		}catch (Exception e) {
+			if (transaction !=null ) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteItem(String id) {
+		Transaction transaction = null;
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			Item selectedItem = session.find(Item.class, id);
+			session.remove(selectedItem);
+			transaction.commit();
+		}catch (Exception e) {
+			if (transaction !=null ) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
 		}
 	}
 

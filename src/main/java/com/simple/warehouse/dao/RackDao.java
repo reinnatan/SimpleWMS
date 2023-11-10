@@ -7,6 +7,7 @@ import java.util.Objects;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.simple.warehouse.enitty.Item;
 import com.simple.warehouse.enitty.Rack;
 import com.simple.warehouse.enitty.Warehouse;
 import com.simple.warehouse.utils.HibernateUtils;
@@ -60,13 +61,14 @@ public class RackDao {
 		}
 	}
 	
-	public void putItemToRack(String count,Rack rack, String itemId) {
+	public void putItemToRack(Rack rack, Item item,String count,String itemId) {
 		Transaction transaction = null;
 		try(Session session = HibernateUtils.getSessionFactory().openSession()){
 			int countParse = Integer.parseInt(count);
 			rack.setCount(countParse);
 			session.getTransaction().begin();
 			session.merge(rack);
+			session.merge(item);
 			session.getTransaction().commit();
 		}catch(Exception e) {
 			if(transaction!=null) {

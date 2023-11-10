@@ -4,9 +4,12 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +25,10 @@ public class Item{
 	
 	@Column
 	private Date dateProduction;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rack_id")
+	private Rack rack;
 	
 
 	public Item() {
@@ -57,5 +64,10 @@ public class Item{
 		this.dateProduction = dateProduction;
 	}
 
+	public void setRack(Rack rack) {
+		this.rack = rack;
+	}
+
+	
 	
 }
