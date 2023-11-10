@@ -69,7 +69,7 @@
 		    	console.log(data);
 		      	data.data.map(rack => {
 		      	
-		      		let data = "<tr><td><input type='radio' id="+rack[0].id+" name='idRack'/></td><td>"+rack[0].name+"</td><td>"+rack[0].dateProduction+"</td></tr>";
+		      		let data = "<tr><td><input type='radio' id="+rack[0]+" name='idRack'/></td><td>"+rack[1]+"</td><td>"+rack[2]+"</td></tr>";
 		      		rows = rows+data;
 		      	})
 		      	
