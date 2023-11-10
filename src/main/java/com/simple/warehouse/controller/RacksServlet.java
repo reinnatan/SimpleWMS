@@ -44,7 +44,7 @@ public class RacksServlet extends HttpServlet {
 			String itemId = req.getParameter("itemId");
 			String countItem = req.getParameter("count");
 			Rack rack = rackDao.findRack(rackId);
-			rack.setDateInbound(Calendar.getInstance().getTime());
+			//rack.setDateInbound(Calendar.getInstance().getTime());
 			Item item = itemDao.findItem(itemId);
 			item.setRack(rack);
 			if (rack.getItem()==null) {
@@ -70,7 +70,7 @@ public class RacksServlet extends HttpServlet {
 			itemId = req.getParameter("itemId");
 			countItem = req.getParameter("count");
 			rack = rackDao.findRack(rackId);
-			rack.setDateOutbound(Calendar.getInstance().getTime());
+			//rack.setDateOutbound(Calendar.getInstance().getTime());
 			item = itemDao.findItem(itemId);
 			if (rack.getItem() == null) {
 				ArrayList<Item> listItems = new ArrayList<Item>();

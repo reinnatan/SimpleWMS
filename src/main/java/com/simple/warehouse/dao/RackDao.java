@@ -41,7 +41,7 @@ public class RackDao {
 	public List<Object[]> listRack(){
 		Transaction transaction = null;
 		try(Session session = HibernateUtils.getSessionFactory().openSession()){
-			return (List<Object[]>) session.createQuery("select r.id, r.name, r.count, r.dateInbound, r.dateOutbound from Rack r", Object[].class).list();
+			return (List<Object[]>) session.createQuery("select r.id, r.name from Rack r", Object[].class).list();
 		}catch(Exception e) {
 			if(transaction!=null) {
 				transaction.rollback();
@@ -65,7 +65,7 @@ public class RackDao {
 		Transaction transaction = null;
 		try(Session session = HibernateUtils.getSessionFactory().openSession()){
 			int countParse = Integer.parseInt(count);
-			rack.setCount(countParse);
+			//rack.setCount(countParse);
 			session.getTransaction().begin();
 			session.merge(rack);
 			session.merge(item);

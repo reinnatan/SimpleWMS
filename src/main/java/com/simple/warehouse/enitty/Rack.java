@@ -31,25 +31,25 @@ public class Rack{
 	@OneToMany(mappedBy = "rack",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Item> item;
 	
-	@Column
-	private int count;
+	//@Column
+	//private int count;
 	
-	@Column
-	private Date dateInbound;
+	//@Column
+	//private Date dateInbound;
 	
-	@Column
-	private Date dateOutbound;
+	//@Column
+	//private Date dateOutbound;
 	
 
 	public Rack() {}
 
-	public Rack(int id, String name, List<Item> item, int count, Date dateInbound, Date dateOutbound) {
+	public Rack(int id, String name, List<Item> item) {
 		this.id = id;
 		this.name = name;
 		this.item = item;
-		this.count = count;
-		this.dateInbound = dateInbound;
-		this.dateOutbound = dateOutbound;
+		//this.count = count;
+		//this.dateInbound = dateInbound;
+		//this.dateOutbound = dateOutbound;
 	}
 
 
@@ -81,34 +81,7 @@ public class Rack{
 		this.item = item;
 	}
 
-	public int getCount() {
-		return count;
-	}
-
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
-
-	public Date getDateInbound() {
-		return dateInbound;
-	}
-
-
-	public void setDateInbound(Date dateInbound) {
-		this.dateInbound = dateInbound;
-	}
-
-
-	public Date getDateOutbound() {
-		return dateOutbound;
-	}
-
-
-	public void setDateOutbound(Date dateOutbound) {
-		this.dateOutbound = dateOutbound;
-	}
+	
 	
 	
 	

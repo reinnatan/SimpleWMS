@@ -12,9 +12,6 @@
 		    columns:[
 		    	{data:0},
 		    	{data:1},
-		    	{data:2},
-		    	{data:3},
-		    	{data:4},
 		    	{
 		            data: 0,
 		            render: function ( data, type, row, meta ) {
@@ -33,9 +30,6 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Count</th>
-                <th>Date Inbound</th>
-                <th>Date Outbound</th>
                 <th></th>
             </tr>
         </thead>

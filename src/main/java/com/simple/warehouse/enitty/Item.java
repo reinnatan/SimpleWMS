@@ -26,6 +26,15 @@ public class Item{
 	@Column
 	private Date dateProduction;
 	
+	@Column(columnDefinition = "integer default 0")
+	private int countItem;
+	
+	@Column
+	private Date dateInbound;
+	
+	@Column
+	private Date dateOutbound;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rack_id")
 	private Rack rack;
@@ -68,6 +77,31 @@ public class Item{
 		this.rack = rack;
 	}
 
+	public int getCountItem() {
+		return countItem;
+	}
+
+	public void setCountItem(int countItem) {
+		this.countItem = countItem;
+	}
+
+	public Date getDateInbound() {
+		return dateInbound;
+	}
+
+	public void setDateInbound(Date dateInbound) {
+		this.dateInbound = dateInbound;
+	}
+
+	public Date getDateOutbound() {
+		return dateOutbound;
+	}
+
+	public void setDateOutbound(Date dateOutbound) {
+		this.dateOutbound = dateOutbound;
+	}
+
+	
 	
 	
 }

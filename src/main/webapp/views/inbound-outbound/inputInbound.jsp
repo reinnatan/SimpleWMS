@@ -20,11 +20,11 @@
 		      }).then((data) => {
 		    	let rows = "";
 		      	data.data.map(rack => {
-		      		let data = "<tr><td><input type='radio' id="+rack[0]+" name='idRack'/></td><td>"+rack[1]+"</td><td>"+rack[2]+"</td><td>"+rack[3]+"</td><td>"+rack[4]+"</td></tr>";
+		      		let data = "<tr><td><input type='radio' id="+rack[0]+" name='idRack'/></td><td>"+rack[1]+"</td></tr>";
 		      		rows = rows+data;
 		      	})
 		      	
-		      	let finalHtml = "<table><th></th><th>Name</th><th>Count</th><th>Date Inbound</th><th>Date Outbound</th>"
+		      	let finalHtml = "<table><th></th><th>Name</th>"
 		      	+rows+"</table>";
 		      	Swal.fire({
 					  title: '<strong>List Racks</strong>',

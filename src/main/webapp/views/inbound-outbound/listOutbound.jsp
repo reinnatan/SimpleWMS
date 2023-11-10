@@ -58,14 +58,10 @@ function format ( d ) {
 		    columns:[
 		    	{data:'id'},
 		    	{data:'name'},
-		    	{data:'count'},
-		    	{data:'dateInbound'},
-		    	{data:'dateOutbound'},
-		    	
 		    	{
 		    		data:'id',
 		    		render: function ( data, type, row, meta ) {
-			                return "<a href=/SimpleWarehousManagementSystem/racks/input-inbound?id="+(data)+"><span class='edit'><i class='fa fa-plus'></i></span></a>";
+			                return "<a class='btn btn-primary' href=/SimpleWarehousManagementSystem/racks/input-inbound?id="+(data)+"><span class='edit'><i class='fa fa-plus'></i></span>&nbsp;&nbsp;Add Item</a>";
 			        }    
 		    	},
 		    	
@@ -95,9 +91,6 @@ function format ( d ) {
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Count</th>
-                <th>Date Inbound</th>
-                <th>Date Outbound</th>
                  <th>Action</th>
                 <th></th>
             </tr>
