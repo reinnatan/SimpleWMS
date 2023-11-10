@@ -16,7 +16,7 @@ function format ( d ) {
 		
 		const formatted = dateProd.getFullYear()+"-"+dateProd.getMonth()+"-"+dateProd.getDate();
 		
-		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td></tr>');
+		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td><button type="button" class="btn btn-success">Inbound item</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning">Outbound item</button></td></tr>');
 	}
 	
 	var finalize = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
