@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 <jsp:include page="../../header.jsp"></jsp:include>
 <script>
+	
+function testing(rackId, itemId, action){
+	alert("Rack Id "+rackId+" Item "+itemId+" Action "+action);
+}
+
 function format ( d ) {
 	console.log(d);
 	//processing items in rack
@@ -16,7 +21,7 @@ function format ( d ) {
 		
 		const formatted = dateProd.getFullYear()+"-"+dateProd.getMonth()+"-"+dateProd.getDate();
 		
-		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td><button type="button" class="btn btn-success">Inbound item</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning">Outbound item</button></td></tr>');
+		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td><button type="button" class="btn btn-success" onclick="testing('+d["id"]+','+d["item"][i]["id"]+',\'inbound\')">Inbound item</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning" onclick="testing('+d["id"]+','+d["item"][i]["id"]+',\'outbound\')">Outbound item</button></td></tr>');
 	}
 	
 	var finalize = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
@@ -24,8 +29,8 @@ function format ( d ) {
 	   	data
 	   	+'</table>';
 	   	
-	console.log("data"+data);   	
-	console.log("finalize"+finalize);
+	//console.log("data"+data);   	
+	//console.log("finalize"+finalize);
 	
     // `d` is the original data object for the row
     return finalize;
@@ -33,6 +38,11 @@ function format ( d ) {
 
  	$(document).ready(function() {
  		// Add event listener for opening and closing details
+ 		
+ 		$(".inbound-button").on("click", function(event){
+ 			alert("inbound is clicked");
+ 		});
+ 		
  	   $('#example').on('click', 'tbody td.dt-control', function () {
  	        var tr = $(this).closest('tr');
  	        var row = table.row( tr );
