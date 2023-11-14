@@ -29,6 +29,12 @@ public class Item{
 	@Column(columnDefinition = "integer default 0")
 	private int countItem;
 	
+	@Column(columnDefinition = "integer default 0")
+	private int countInboundItem;
+	
+	@Column(columnDefinition = "integer default 0")
+	private int countOutboundItem;
+	
 	@Column
 	private Date dateInbound;
 	
@@ -101,6 +107,23 @@ public class Item{
 		this.dateOutbound = dateOutbound;
 	}
 
+	public int getCountInboundItem() {
+		return countInboundItem;
+	}
+
+	public void setCountInboundItem(int countInboundItem) {
+		this.countInboundItem = countInboundItem;
+	}
+
+	public int getCountOutboundItem() {
+		return countOutboundItem;
+	}
+
+	public void setCountOutboundItem(int countOutboundItem) {
+		this.countOutboundItem = countOutboundItem;
+	}
+
+	
 	
 	
 	

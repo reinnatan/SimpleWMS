@@ -42,11 +42,11 @@ function format ( d ) {
 			countItem =  d['item'][i]['countItem'];
 		}
 		
-		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td>'+formattedInbound+'</td><td>'+formattedOutbound+'</td><td>'+countItem+'</td><td><a class="btn btn-success" href=/SimpleWarehousManagementSystem/racks/input-inbound?rack-id='+d["id"]+'&item-id='+d["item"][i]["id"]+'&action=inbound>Inbound item</a>&nbsp;&nbsp;<a class="btn btn-warning" href=/SimpleWarehousManagementSystem/racks/input-outbound?rack-id='+d["id"]+'&item-id='+d["item"][i]["id"]+'&action=outbound>Outbound item</a></td></tr>');
+		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td>'+formattedInbound+'</td><td>'+formattedOutbound+'</td><td>'+d['item'][i]['countInboundItem']+'</td><td>'+d['item'][i]['countOutboundItem']+'</td><td>'+countItem+'</td><td><a class="btn btn-success" href=/SimpleWarehousManagementSystem/racks/input-inbound?rack-id='+d["id"]+'&item-id='+d["item"][i]["id"]+'&action=inbound>Inbound item</a>&nbsp;&nbsp;<a class="btn btn-warning" href=/SimpleWarehousManagementSystem/racks/input-outbound?rack-id='+d["id"]+'&item-id='+d["item"][i]["id"]+'&action=outbound>Outbound item</a></td></tr>');
 	}
 	
 	var finalize = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-	   	'<th>ID Item</th><th>Name Item</th><th>Date Production</th><th>Date inbound</th><th>Date outbound</th><th>Count Item</th>'+
+	   	'<th>ID Item</th><th>Name Item</th><th>Date Production</th><th>Date inbound</th><th>Date outbound</th><th>Count Inbound</th><th>Count Outbound</th><th>Count Item</th>'+
 	   	data
 	   	+'</table>';
 	   	

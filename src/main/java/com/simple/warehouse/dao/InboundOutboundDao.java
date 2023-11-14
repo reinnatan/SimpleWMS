@@ -32,7 +32,7 @@ public class InboundOutboundDao {
 			Rack rack = session.find(Rack.class, rackId);
 			for(Item item:rack.getItem()) {
 				if(item.getId()== itemIdParse) {
-					item.setCountItem(itemCountParse);
+					item.setCountInboundItem(itemCountParse);
 					item.setDateInbound(Calendar.getInstance().getTime());
 					break;
 				}
@@ -52,7 +52,7 @@ public class InboundOutboundDao {
 			Rack rack = session.find(Rack.class, rackId);
 			for(Item item:rack.getItem()) {
 				if(item.getId()== itemIdParse) {
-					item.setCountItem(itemCountParse);
+					item.setCountOutboundItem(itemCountParse);
 					item.setDateOutbound(Calendar.getInstance().getTime());
 					break;
 				}
