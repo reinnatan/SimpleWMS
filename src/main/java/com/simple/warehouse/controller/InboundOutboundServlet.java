@@ -60,7 +60,26 @@ public class InboundOutboundServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+		String path = req.getRequestURI();
+		String[] endPath = path.split("/");
+		switch (endPath[endPath.length-1]) {
+			case "update-inbound":
+				String rackId = req.getParameter("rackId");
+				String itemId = req.getParameter("itemId");
+				String itemCount = req.getParameter("itemId");
+				inboundOutbound.updateInbound(rackId, itemId, itemCount);
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/inbound-outbound/listOutbound.jsp");
+				dispatcher.forward(req, resp);
+				break;
+			case "update-outbound" :
+				rackId = req.getParameter("rackId");
+				itemId = req.getParameter("itemId");
+				itemCount = req.getParameter("itemId");
+				inboundOutbound.updateOutbound(rackId, itemId, itemCount);
+				dispatcher = getServletContext().getRequestDispatcher("/views/inbound-outbound/listOutbound.jsp");
+				dispatcher.forward(req, resp);
+				break;
+		}
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.simple.warehouse.dao;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -22,8 +23,46 @@ public class InboundOutboundDao {
 			e.printStackTrace();
 			return null;
 		}
-		
-
+	}
+	
+	public void updateInbound(String rackId, String itemId, String count) {
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			int itemIdParse = Integer.parseInt(itemId);
+			int itemCountParse = Integer.parseInt(count);
+			Rack rack = session.find(Rack.class, rackId);
+			for(Item item:rack.getItem()) {
+				if(item.getId()== itemIdParse) {
+					item.setCountItem(itemCountParse);
+					item.setDateInbound(Calendar.getInstance().getTime());
+					break;
+				}
+			}
+			Transaction tr = session.beginTransaction();
+			session.merge(rack);
+			tr.commit();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateOutbound(String rackId, String itemId, String count) {
+		try(Session session = HibernateUtils.getSessionFactory().openSession()){
+			int itemIdParse = Integer.parseInt(itemId);
+			int itemCountParse = Integer.parseInt(count);
+			Rack rack = session.find(Rack.class, rackId);
+			for(Item item:rack.getItem()) {
+				if(item.getId()== itemIdParse) {
+					item.setCountItem(itemCountParse);
+					item.setDateOutbound(Calendar.getInstance().getTime());
+					break;
+				}
+			}
+			Transaction tr = session.beginTransaction();
+			session.merge(rack);
+			tr.commit();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

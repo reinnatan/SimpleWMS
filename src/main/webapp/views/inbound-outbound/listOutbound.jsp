@@ -9,7 +9,7 @@
 <script>
 	
 function testing(rackId, itemId, action){
-	alert("Rack Id "+rackId+" Item "+itemId+" Action "+action);
+	
 }
 
 function format ( d ) {
@@ -17,15 +17,36 @@ function format ( d ) {
 	//processing items in rack
 	var data = "";
 	for(i=0; i<d['item'].length; i++){
+		//date production
 		var dateProd = new Date(d['item'][i]['dateProduction']);
-		
 		const formatted = dateProd.getFullYear()+"-"+dateProd.getMonth()+"-"+dateProd.getDate();
 		
-		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td><button type="button" class="btn btn-success" onclick="testing('+d["id"]+','+d["item"][i]["id"]+',\'inbound\')">Inbound item</button>&nbsp;&nbsp;<button type="button" class="btn btn-warning" onclick="testing('+d["id"]+','+d["item"][i]["id"]+',\'outbound\')">Outbound item</button></td></tr>');
+		//date inbound
+		var dateInbound = "";
+		var formattedInbound = "";
+		if(d['item'][i].hasOwnProperty("dateInbound")){
+			dateInbound =  new Date(d['item'][i]['dateInbound']);
+			formattedInbound = dateInbound.getFullYear()+"-"+dateInbound.getMonth()+"-"+dateInbound.getDate();
+		}
+		
+		//date outbound
+		var dateOutbound = "";
+		var formattedOutbound = "";
+		if(d['item'][i].hasOwnProperty("dateOutbound")){
+			dateOutbound =  new Date(d['item'][i]['dateOutbound']);
+			formattedOutbound = dateOutbound.getFullYear()+"-"+dateOutbound.getMonth()+"-"+dateOutbound.getDate();
+		}
+		
+		var countItem = "";
+		if(d['item'][i].hasOwnProperty("countItem")){
+			countItem =  d['item'][i]['countItem'];
+		}
+		
+		data = data.concat('<tr><td>'+d['item'][i]['id']+'</td><td>'+d['item'][i]['name']+'</td><td>'+formatted+'</td><td>'+formattedInbound+'</td><td>'+formattedOutbound+'</td><td>'+countItem+'</td><td><a class="btn btn-success" href=/SimpleWarehousManagementSystem/racks/input-inbound?rack-id='+d["id"]+'&item-id='+d["item"][i]["id"]+'&action=inbound>Inbound item</a>&nbsp;&nbsp;<a class="btn btn-warning" href=/SimpleWarehousManagementSystem/racks/input-outbound?rack-id='+d["id"]+'&item-id='+d["item"][i]["id"]+'&action=outbound>Outbound item</a></td></tr>');
 	}
 	
 	var finalize = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-	   	'<th>ID Item</th><th>Name Item</th><th>Date Production</th>'+
+	   	'<th>ID Item</th><th>Name Item</th><th>Date Production</th><th>Date inbound</th><th>Date outbound</th><th>Count Item</th>'+
 	   	data
 	   	+'</table>';
 	   	
