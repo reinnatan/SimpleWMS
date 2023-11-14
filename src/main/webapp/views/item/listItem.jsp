@@ -14,6 +14,7 @@
 		    	{data:0},
 		    	{data:1},
 		    	{data:2},
+		    	{data:3},
 		    	{
 		            data: 0,
 		            render: function ( data, type, row, meta ) {
@@ -33,6 +34,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Date Production</th>
+                <th>Count Item</th>
                 <th></th>
             </tr>
         </thead>

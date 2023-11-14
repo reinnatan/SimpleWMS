@@ -49,10 +49,11 @@ public class Item{
 	public Item() {
 	}
 
-	public Item(int id, String name, Date dateProduction) {
+	public Item(int id, String name, Date dateProduction, int countItem) {
 		this.id = id;
 		this.name = name;
 		this.dateProduction = dateProduction;
+		this.countItem = countItem;
 	}
 
 	public int getId() {

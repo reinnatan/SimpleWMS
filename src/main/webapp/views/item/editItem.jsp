@@ -14,6 +14,7 @@
 		<table>
 			<tr><td>Name</td><td><input type='text' name='nameItem' value="${item.name}"></td></tr>
 			<tr><td>Date Production</td><td><input type='date' name='dateProduction' value="${dateProduction}"></td></tr>
+			<tr><td>Count Item</td><td><input type='text' name='countItem' value="${countItem}"></td></tr>
 			<tr><td><input type='submit' id='addItemSubmit'></td></tr>
 		</table>
 	</form>

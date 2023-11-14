@@ -57,7 +57,7 @@ public class ItemDao {
 	public List<Object[]> listItem(){
 		Transaction transaction = null;
 		try(Session session = HibernateUtils.getSessionFactory().openSession()){
-			return (List<Object[]>) session.createQuery("select i.id, i.name, i.dateProduction from Item i", Object[].class).list();
+			return (List<Object[]>) session.createQuery("select i.id, i.name, i.dateProduction, i.countItem from Item i", Object[].class).list();
 		}catch(Exception e) {
 			if(transaction!=null) {
 				transaction.rollback();
