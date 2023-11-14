@@ -14,3 +14,9 @@
     - Datatable javascript
     - Sweet alert
     - Hibernate
+  - Screenshoot apps 
+    - dashboard
+    		- ![dahboard](./screenshoot/dashboard.png)
+    	- list warehouse
+    		- ![dahboard](./screenshoot/list-warehouse.png)
+  	 
