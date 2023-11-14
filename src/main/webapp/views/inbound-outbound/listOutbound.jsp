@@ -37,7 +37,7 @@ function format ( d ) {
 			formattedOutbound = dateOutbound.getFullYear()+"-"+dateOutbound.getMonth()+"-"+dateOutbound.getDate();
 		}
 		
-		var countItem = "";
+		var countItem = "0";
 		if(d['item'][i].hasOwnProperty("countItem")){
 			countItem =  d['item'][i]['countItem'];
 		}

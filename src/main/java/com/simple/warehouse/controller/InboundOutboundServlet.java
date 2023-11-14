@@ -66,7 +66,7 @@ public class InboundOutboundServlet extends HttpServlet{
 			case "update-inbound":
 				String rackId = req.getParameter("rackId");
 				String itemId = req.getParameter("itemId");
-				String itemCount = req.getParameter("itemId");
+				String itemCount = req.getParameter("count");
 				inboundOutbound.updateInbound(rackId, itemId, itemCount);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/inbound-outbound/listOutbound.jsp");
 				dispatcher.forward(req, resp);
@@ -74,7 +74,7 @@ public class InboundOutboundServlet extends HttpServlet{
 			case "update-outbound" :
 				rackId = req.getParameter("rackId");
 				itemId = req.getParameter("itemId");
-				itemCount = req.getParameter("itemId");
+				itemCount = req.getParameter("count");
 				inboundOutbound.updateOutbound(rackId, itemId, itemCount);
 				dispatcher = getServletContext().getRequestDispatcher("/views/inbound-outbound/listOutbound.jsp");
 				dispatcher.forward(req, resp);
