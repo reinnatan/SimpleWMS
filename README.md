@@ -16,23 +16,23 @@
     - Hibernate
   - Screenshoot apps 
     - dashboard
-    		- ![dahboard](./screenshoot/dashboard.png)
+    		![dahboard](./screenshoot/dashboard.png)
     - list warehouse
-    		- ![dahboard](./screenshoot/list-warehouse.png)
+    		![dahboard](./screenshoot/list-warehouse.png)
     - input warehouse
-    		- ![dahboard](./screenshoot/input-warehouse.png)
+    		![dahboard](./screenshoot/input-warehouse.png)
     - input rack
-    		- ![dahboard](./screenshoot/input-rack.png)
+    		![dahboard](./screenshoot/input-rack.png)
     - list rack
-    		- ![dahboard](./screenshoot/list-rack.png)
+    		![dahboard](./screenshoot/list-rack.png)
     - input item
-    		- ![dahboard](./screenshoot/input-item.png)
+    		![dahboard](./screenshoot/input-item.png)
     - list item
-    		- ![dahboard](./screenshoot/list-item.png)
+    		![dahboard](./screenshoot/list-item.png)
     - list inbound outbound
-    		- ![dahboard](./screenshoot/list-inbound-outbound.png)
+    		![dahboard](./screenshoot/list-inbound-outbound.png)
     - input inbound
-    		- ![dahboard](./screenshoot/input-inbound.png)
+    		![dahboard](./screenshoot/input-inbound.png)
     - input outbound
-    		- ![dahboard](./screenshoot/input-outbound.png)
+    		![dahboard](./screenshoot/input-outbound.png)
   	 
