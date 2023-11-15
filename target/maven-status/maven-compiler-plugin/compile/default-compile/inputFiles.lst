@@ -1,0 +1,13 @@
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/utils/HibernateUtils.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/controller/ItemServlet.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/enitty/Rack.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/dao/RackDao.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/controller/InboundOutboundServlet.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/dao/WarehouseDao.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/dao/ItemDao.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/dao/InboundOutboundDao.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/enitty/Warehouse.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/controller/RacksServlet.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/controller/WarehouseServlet.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/warehouse/enitty/Item.java
+/Users/reinhart/eclipse-workspace/SimpleWarehousManagementSystem/src/main/java/com/simple/serializer/WarehouseJSON.java
